@@ -39,6 +39,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/uploads', express.static('uploads'))
 
+app.get('/api', (res) => res.send({success: true, message: 'Api is ready to work'}))
 app.use('/api/careerJobs', careerJobs)
 app.use('/api/contactDetails', contactDetails)
 app.use('/api/contactForm', contactForm)
