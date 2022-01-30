@@ -13,6 +13,7 @@ import skills from './routes/skills.js'
 import technologies from './routes/technologies.js'
 import technologiesTabs from './routes/technologiesTabs.js'
 import timelineCards from './routes/timelineCards.js'
+import account from './routes/account.js'
 
 const app = express()
 
@@ -50,3 +51,4 @@ app.use('/api/skills', skills)
 app.use('/api/technologies', technologies)
 app.use('/api/technologiesTabs', technologiesTabs)
 app.use('/api/timelineCards', timelineCards)
+app.use('/api/account', account)

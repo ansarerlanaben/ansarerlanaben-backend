@@ -6,6 +6,6 @@ const contactDetailsSchema = mongoose.Schema({
     contact_detail_link: String
 })
 
-const ContactDetailsRu = mongoose.model('contactDetails_ru', contactDetailsSchema)
+const ContactDetails = mongoose.model('contactDetails', contactDetailsSchema)
 
-export default ContactDetailsRu
+export default ContactDetails

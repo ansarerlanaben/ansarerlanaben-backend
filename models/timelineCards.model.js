@@ -5,6 +5,6 @@ const timelineCardsSchema = mongoose.Schema({
   timeline_card_action: String
 })
 
-const TimelineCardsRu = mongoose.model('timelineCards_ru', timelineCardsSchema)
+const TimelineCards = mongoose.model('timelineCards', timelineCardsSchema)
 
-export default TimelineCardsRu
+export default TimelineCards

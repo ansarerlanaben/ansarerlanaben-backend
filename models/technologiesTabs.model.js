@@ -5,6 +5,6 @@ const techonlogiesTabsSchema = mongoose.Schema({
   technologies_tab_title: String
 })
 
-const TechnologiesTabsRu = mongoose.model('technologiesTabs_ru', techonlogiesTabsSchema)
+const TechnologiesTabs = mongoose.model('technologiesTabs', techonlogiesTabsSchema)
 
-export default TechnologiesTabsRu
+export default TechnologiesTabs

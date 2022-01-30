@@ -4,6 +4,6 @@ const careerJobsSchema = mongoose.Schema({
     career_job_title: String
 })
 
-const CareerJobsRu = mongoose.model('careerJobs_ru', careerJobsSchema)
+const CareerJobs = mongoose.model('careerJobs', careerJobsSchema)
 
-export default CareerJobsRu
+export default CareerJobs

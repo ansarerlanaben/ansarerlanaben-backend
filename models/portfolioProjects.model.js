@@ -13,6 +13,6 @@ const portfolioProjectsSchema = mongoose.Schema({
     project_year:String,
 })
 
-const PortfolioProjectsRu = mongoose.model('portfolioProjects_ru', portfolioProjectsSchema)
+const PortfolioProjects = mongoose.model('portfolioProjects', portfolioProjectsSchema)
 
-export default PortfolioProjectsRu
+export default PortfolioProjects

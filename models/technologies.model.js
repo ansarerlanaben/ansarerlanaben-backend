@@ -6,6 +6,6 @@ const techonlogiesSchema = mongoose.Schema({
   technologie_img: String
 })
 
-const TechnologiesEn = mongoose.model('technologies_en', techonlogiesSchema)
+const Technologies = mongoose.model('technologies', techonlogiesSchema)
 
-export default TechnologiesEn
+export default Technologies

@@ -5,6 +5,6 @@ const skillsSchema = mongoose.Schema({
   skills_level: String
 })
 
-const SkillsEn = mongoose.model('skills_en', skillsSchema)
+const Skills = mongoose.model('skills', skillsSchema)
 
-export default SkillsEn
+export default Skills

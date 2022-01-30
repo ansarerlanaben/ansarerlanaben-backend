@@ -5,6 +5,6 @@ const questionsAnswersSchema = mongoose.Schema({
   answer: String
 })
 
-const QuestionsAnswersEn = mongoose.model('questionsAnswers_en', questionsAnswersSchema)
+const QuestionsAnswers = mongoose.model('questionsAnswers', questionsAnswersSchema)
 
-export default QuestionsAnswersEn
+export default QuestionsAnswers
