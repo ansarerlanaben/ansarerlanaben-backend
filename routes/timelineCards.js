@@ -7,10 +7,11 @@ const router = express.Router()
 
 router.get('/get', async (req, res) => {
     const timelineCards = await TimelineCards.find({})
-    if (timelineCards) {
+    const timelineCardsSorted = timelineCards.sort((a,b) => a - b)
+    if (timelineCardsSorted) {
         res.send({
             success: true,
-            data: timelineCards,
+            data: timelineCardsSorted,
             message: "Timeline Cards have been retrieved successfully"
         })
     } else {
