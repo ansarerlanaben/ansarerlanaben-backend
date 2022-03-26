@@ -22,55 +22,44 @@ router.get('/get', async (req, res) => {
 })
 
 router.post('/add', async (req, res) => {
-    const sessionID = req.headers['sessionID']
-    const session = await Session.findOne({ sessionID: sessionID })
-    const user = await User.findOne({ _id: session?.userID, role: 'admin' })
-    if (user) {
-        const errors = {}
-        if (!username.trim()) {
-            errors.username = true
-        }
-        if (!subject.trim()) {
-            errors.subject = true
-        }
-        if (!message.trim()) {
-            errors.message = true
-        }
-        if (!email) {
-            errors.email = true
-        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-            errors.email = true
-        }
-        if (Object.keys(errors).length === 0) {
-            new ContactForm({
-                username: username,
-                subject: subject,
-                email: email,
-                message: message
-            }).save(err => {
-                if (!err) {
-                    res.send({
-                        success: true,
-                        message: "Message has been sent successfully"
-                    })
-                } else {
-                    res.send({
-                        success: false,
-                        message: "Connection error"
-                    })
-                }
-            })
-        } else {
-            res.send({
-                success: false,
-                errors: errors,
-                message: "Missing fields"
-            })
-        }
+    const { username, subject, message, email } = req.body
+    const errors = {}
+    if (!username.trim()) {
+        errors.username = true
+    }
+    if (!subject.trim()) {
+        errors.subject = true
+    }
+    if (!message.trim()) {
+        errors.message = true
+    }
+    if (!email.trim()) {
+        errors.email = true
+    }
+    if (Object.keys(errors).length === 0) {
+        new ContactForm({
+            username: username,
+            subject: subject,
+            email: email,
+            message: message
+        }).save(err => {
+            if (!err) {
+                res.send({
+                    success: true,
+                    message: "Message has been sent successfully"
+                })
+            } else {
+                res.send({
+                    success: false,
+                    message: "Connection error"
+                })
+            }
+        })
     } else {
         res.send({
             success: false,
-            message: "User is not admin"
+            errors: errors,
+            message: "Missing fields"
         })
     }
 })
